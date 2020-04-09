@@ -15,7 +15,7 @@
 
     <fileSets>
         <fileSet>
-            <directory>${project.basedir}/src/main/resources</directory>
+            <directory>${project.basedir}/backend/src/main/resources</directory>
             <includes>
                 <include>application.yml</include>
                 <include>logback.xml</include>
@@ -24,7 +24,7 @@
         </fileSet>
 
         <fileSet>
-            <directory>${project.basedir}/src/main/resources/credentials</directory>
+            <directory>${project.basedir}/backend/src/main/resources/credentials</directory>
             <includes>
                 <include>covid-19-lk-dev-firebase-adminsdk.json</include>
             </includes>
@@ -32,7 +32,7 @@
         </fileSet>
 
         <fileSet>
-            <directory>${project.basedir}/scripts</directory>
+            <directory>${project.basedir}/backend/scripts</directory>
             <includes>
                 <include>start.sh</include>
                 <include>stop.sh</include>
@@ -41,12 +41,33 @@
         </fileSet>
     </fileSets>
 
-    <files>
-        <file>
-            <source>${project.basedir}/target/covid19-${project.version}.jar</source>
-            <outputDirectory>/</outputDirectory>
-            <destName>${project.artifactId}.jar</destName>
-        </file>
-    </files>
+<!--    <files>-->
+<!--        <file>-->
+<!--            <source>${project.basedir}/backend/target/backend-${project.version}.jar</source>-->
+<!--            <outputDirectory>/</outputDirectory>-->
+<!--            <destName>${project.artifactId}.jar</destName>-->
+<!--        </file>-->
+<!--        <file>-->
+<!--            <source>${project.basedir}/admin-webapp/target/admin-webapp-${project.version}.war</source>-->
+<!--            <outputDirectory>/</outputDirectory>-->
+<!--            <destName>admin-webapp.war</destName>-->
+<!--        </file>-->
+<!--    </files>-->
+    <moduleSets>
+        <moduleSet>
+            <!-- Enable access to all projects in the current multimodule build! -->
+            <useAllReactorProjects>true</useAllReactorProjects>
+
+            <!-- Now, select which projects to include in this module-set. -->
+            <includes>
+                <include>lk.gov.govtech:backend</include>
+                <include>lk.gov.govtech:admin-webapp</include>
+            </includes>
+            <binaries>
+                <outputDirectory>/</outputDirectory>
+                <unpack>false</unpack>
+            </binaries>
+        </moduleSet>
+    </moduleSets>
 
 </assembly>
