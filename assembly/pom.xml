@@ -7,6 +7,8 @@
     <artifactId>assembly</artifactId>
     <packaging>pom</packaging>
     <version>1.0.0</version>
+    <name>COVID-19 Assembly</name>
+    <description>Assemble the backend and the admin webapp as a single package</description>
 
     <parent>
         <groupId>lk.gov.govtech</groupId>
@@ -32,6 +34,13 @@
         <plugins>
             <plugin>
                 <artifactId>maven-assembly-plugin</artifactId>
+                <configuration>
+                    <descriptors>
+                        <descriptor>assembly.xml</descriptor>
+                    </descriptors>
+                    <finalName>covid19-${project.version}</finalName>
+                    <appendAssemblyId>false</appendAssemblyId>
+                </configuration>
                 <executions>
                     <execution>
                         <id>distro-assembly</id>

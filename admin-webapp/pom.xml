@@ -5,13 +5,17 @@
 
     <artifactId>admin-webapp</artifactId>
     <packaging>war</packaging>
-    <version>${project.parent.version}</version>
+    <version>1.0.0</version>
     <name>COVID-19 Admin Webapp</name>
-    <description>Management Portal Webapp for COVID-19 MyHealth Sri Lanka app</description>
+    <description>Management Portal Webapp for MyHealth Sri Lanka Mobile app</description>
 
     <parent>
         <groupId>lk.gov.govtech</groupId>
         <artifactId>covid19</artifactId>
         <version>1.0.0</version>
     </parent>
+
+    <build>
+        <finalName>admin-webapp</finalName>
+    </build>
 </project>

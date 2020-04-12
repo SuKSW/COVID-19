@@ -4,10 +4,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>backend</artifactId>
-    <packaging>jar</packaging>
-    <version>${project.parent.version}</version>
+    <version>1.0.0</version>
     <name>COVID-19 Backend</name>
-    <description>Backend services for COVID-19 MyHealth Sri Lanka app</description>
+    <description>Backend services for MyHealth Sri Lanka Mobile app</description>
 
     <parent>
         <groupId>lk.gov.govtech</groupId>
@@ -17,9 +16,10 @@
 
     <properties>
         <java.version>1.8</java.version>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-
-
 
     <dependencyManagement>
         <dependencies>
@@ -30,7 +30,6 @@
                 <version>2.2.5.RELEASE</version>
                 <type>pom</type>
                 <scope>import</scope>
-                <relativePath>../../spring-boot-dependencies</relativePath>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -130,10 +129,19 @@
     </dependencies>
 
     <build>
+        <finalName>backend</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>2.2.5.RELEASE</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>

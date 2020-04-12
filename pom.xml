@@ -8,14 +8,7 @@
     <artifactId>covid19</artifactId>
     <version>1.0.0</version>
     <name>COVID-19</name>
-    <description>Backend and administration frontend for COVID-19 MyHealth Sri Lanka app</description>
-
-<!--    <parent>-->
-<!--        <groupId>org.springframework.boot</groupId>-->
-<!--        <artifactId>spring-boot-starter-parent</artifactId>-->
-<!--        <version>2.2.5.RELEASE</version>-->
-<!--        <relativePath/> &lt;!&ndash; lookup parent from repository &ndash;&gt;-->
-<!--    </parent>-->
+    <description>Backend and administration frontend for MyHealth Sri Lanka Mobile app</description>
 
     <properties>
         <java.version>1.8</java.version>
@@ -33,53 +26,49 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-assembly-plugin</artifactId>
-                    <configuration>
-                        <descriptors>
-                            <descriptor>assembly.xml</descriptor>
-                        </descriptors>
-                        <finalName>covid19-${project.version}</finalName>
-                        <appendAssemblyId>false</appendAssemblyId>
-                    </configuration>
+                    <version>3.2.0</version>
                 </plugin>
             </plugins>
         </pluginManagement>
 
         <plugins>
-<!--            <plugin>-->
-<!--                <artifactId>maven-clean-plugin</artifactId>-->
-<!--                <version>2.6</version>-->
-<!--                <executions>-->
-<!--                    <execution>-->
-<!--                        <id>pre-cleanup</id>-->
-<!--                        <phase>initialize</phase>-->
-<!--                        <goals>-->
-<!--                            <goal>clean</goal>-->
-<!--                        </goals>-->
-<!--                    </execution>-->
-<!--                    <execution>-->
-<!--                        <id>post-cleanup</id>-->
-<!--                        <phase>package</phase>-->
-<!--                        <goals>-->
-<!--                            <goal>clean</goal>-->
-<!--                        </goals>-->
-<!--                        <configuration>-->
-<!--                            <excludeDefaultDirectories>true</excludeDefaultDirectories>-->
-<!--                            <filesets>-->
-<!--                                <fileset>-->
-<!--                                    <directory>target</directory>-->
-<!--                                    <includes>-->
-<!--                                        <include>**</include>-->
-<!--                                    </includes>-->
-<!--                                    <excludes>-->
-<!--                                        <exclude>covid19-1.0.0-SNAPSHOT.zip</exclude>-->
-<!--                                    </excludes>-->
-<!--                                </fileset>-->
-<!--                            </filesets>-->
-<!--                            <verbose>true</verbose>-->
-<!--                        </configuration>-->
-<!--                    </execution>-->
-<!--                </executions>-->
-<!--            </plugin>-->
+            <plugin>
+                <artifactId>maven-clean-plugin</artifactId>
+                <version>2.6</version>
+                <executions>
+                    <execution>
+                        <id>pre-cleanup</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>clean</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>post-cleanup</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>clean</goal>
+                        </goals>
+                        <configuration>
+                            <excludeDefaultDirectories>true</excludeDefaultDirectories>
+                            <filesets>
+                                <fileset>
+                                    <directory>target</directory>
+                                    <includes>
+                                        <include>**</include>
+                                    </includes>
+                                    <excludes>
+                                        <exclude>admin-webapp.war</exclude>
+                                        <exclude>backend.jar</exclude>
+                                        <exclude>covid19-1.0.0.zip</exclude>
+                                    </excludes>
+                                </fileset>
+                            </filesets>
+                            <verbose>true</verbose>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
 </project>
