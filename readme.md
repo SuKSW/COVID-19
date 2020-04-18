@@ -63,12 +63,12 @@ POST http://localhost:8000/notification/alert/add
    "title":{
       "english":"Welcome",
       "sinhala":"ආයුබෝවන්",
-      "tamil":" வணக்கம"
+      "tamil":" வணக்கம்"
    },
    "message":{
       "english":"This is a test message",
       "sinhala":"මෙය \"පරීක්\"ෂණ පණිවිඩයකි",
-      "tamil":"இது ஒரு சோதனை சய்தி"
+      "tamil":"இது ஒரு சோதனை செய்தி"
    }
 }
 ```

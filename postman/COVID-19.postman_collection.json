@@ -24,7 +24,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n   \"source\":\"HPB - Sri Lanka\",\n   \"title\":{\n      \"english\":\"Welcome\",\n      \"sinhala\":\"ආයුබෝවන්\",\n      \"tamil\":\" வணக்கம\"\n   },\n   \"message\":{\n      \"english\":\"This is a test message\",\n      \"sinhala\":\"මෙය \\\"පරීක්\\\"ෂණ පණිවිඩයකි\",\n      \"tamil\":\"இது ஒரு சோதனை சய்தி\"\n   }\n}"
+					"raw": "{\n   \"source\":\"HPB - Sri Lanka\",\n   \"title\":{\n      \"english\":\"Welcome\",\n      \"sinhala\":\"ආයුබෝවන්\",\n      \"tamil\":\" வணக்கம்\"\n   },\n   \"message\":{\n      \"english\":\"This is a test message\",\n      \"sinhala\":\"මෙය \\\"පරීක්\\\"ෂණ පණිවිඩයකි\",\n      \"tamil\":\"இது ஒரு சோதனை செய்தி\"\n   }\n}"
 				},
 				"url": {
 					"raw": "http://localhost:8000/notification/alert/add",
@@ -124,7 +124,7 @@
 			"response": []
 		},
 		{
-			"name": "Get Alert Notification by Id",
+			"name": "Get Alert by Id and Lang",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -143,6 +143,31 @@
 					]
 				},
 				"description": "http://localhost:8000/application/alert/<alertId>/<lang>\n\nlang should be one of:\n- en\n- si\n- ta"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Alert by Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8000/notification/alert/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"notification",
+						"alert",
+						"2"
+					]
+				}
 			},
 			"response": []
 		},
@@ -243,7 +268,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n   \"source\":\"HPB - Sri Lanka - 1\",\n   \"title\":{\n      \"english\":\"Welcome - 1\",\n      \"sinhala\":\"ආයුබෝවන් -1\", \n      \"tamil\":\" வணக்கம - 1\" \n   },\n   \"message\":{\n      \"english\":\"This is a test message - 1\",\n      \"sinhala\":\"මෙය \\\"පරීක්\\\"ෂණ පණිවිඩයකි - 1\",\n      \"tamil\":\"இது ஒரு சோதனை சய்தி - 1\"\n   }\n}"
+					"raw": "{\n   \"source\":\"HPB - Sri Lanka - 1\",\n   \"title\":{\n      \"english\":\"Welcome - 1\",\n      \"sinhala\":\"ආයුබෝවන් -1\", \n      \"tamil\":\" வணக்கம் - 1\" \n   },\n   \"message\":{\n      \"english\":\"This is a test message - 1\",\n      \"sinhala\":\"මෙය \\\"පරීක්\\\"ෂණ පණිවිඩයකි - 1\",\n      \"tamil\":\"இது ஒரு சோதனை செய்தி - 1\"\n   }\n}"
 				},
 				"url": {
 					"raw": "http://localhost:8000/notification/alert/4",
